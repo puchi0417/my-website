@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自己紹介 | 大学1年生</title>
+  <style>
+    /* ベース設定（外部フォント・ライブラリ不使用） */
+    :root {
+      --bg-color: #faf8f5;
+      --card-bg: #ffffff;
+      --primary-color: #4a5568;
+      --accent-soft: #fef6e4;
+      --accent-border: #f3d2c1;
+      --tag-bg: #edf2f7;
+      --text-main: #2d3748;
+      --text-sub: #4a5568;
+      --border-color: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ヘッダー */
+    header {
+      background-color: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: var(--tag-bg);
+      color: var(--primary-color);
+      font-size: 0.875rem;
+      font-weight: bold;
+      padding: 0.3rem 1rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    header h1 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: 0.05em;
+    }
+
+    /* メインコンテナ（広い画面・狭い画面対応） */
+    main {
+      max-width: 760px;
+      margin: 2.5rem auto 3.5rem;
+      padding: 0 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 14px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+      border: 1px solid var(--border-color);
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      color: var(--text-main);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent-border);
+      display: inline-block;
+    }
+
+    /* 学び・好きのカードグリッド */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .item-box {
+      background-color: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      border-radius: 10px;
+      padding: 1.25rem 1rem;
+    }
+
+    .item-category {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: var(--text-sub);
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.04em;
+    }
+
+    .item-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    /* リスト表示 */
+    .profile-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .profile-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: 1rem;
+    }
+
+    .profile-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+    }
+
+    /* フッター */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-sub);
+    }
+
+    /* 狭い画面（スマートフォンなど）向けの調整 */
+    @media (max-width: 640px) {
+      header {
+        padding: 2.25rem 1rem 2rem;
+      }
+
+      header h1 {
+        font-size: 1.55rem;
+      }
+
+      main {
+        margin: 1.5rem auto 2.5rem;
+        padding: 0 1rem;
+      }
+
+      .card {
+        padding: 1.5rem 1.25rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="badge">大学1年生</span>
+    <h1>自己紹介</h1>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="about-heading">
+      <h2 id="about-heading">プロフィール</h2>
+      <div class="grid">
+        <div class="item-box">
+          <span class="item-category">大学での学び</span>
+          <p class="item-title">情報工学</p>
+        </div>
+        <div class="item-box">
+          <span class="item-category">大好きなもの</span>
+          <p class="item-title">お文具さん</p>
+        </div>
+        <div class="item-box">
+          <span class="item-category">好きなこと</span>
+          <p class="item-title">ピアノを弾くこと</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="detail-heading">
+      <h2 id="detail-heading">私について</h2>
+      <ul class="profile-list">
+        <li>大学1年生で、情報工学を学んでいます。</li>
+        <li>お文具さんが大好きです。</li>
+        <li>ピアノを弾くのも好きです。</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>大学1年生 自己紹介ページ</p>
+  </footer>
+
+</body>
+</html>
